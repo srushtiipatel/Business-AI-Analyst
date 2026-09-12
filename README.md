@@ -11,9 +11,7 @@ by asking questions in plain English — no SQL or coding knowledge required.
 ---
 
 ## 🚀 Live Demo
-> [Click here to try it live](https://yourusername-business-ai-analyst.streamlit.app)
-
----
+👉 **[Click here to try Business AI Analyst live](https://business-ai-analyst-2bofaxveqeydsf2zpxhoca.streamlit.app/)**
 
 ## 💡 What is Business AI Analyst?
 

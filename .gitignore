@@ -1,0 +1,6 @@
+.env
+bi_copilot.db
+__pycache__/
+*.pyc
+.vscode/
+*.db

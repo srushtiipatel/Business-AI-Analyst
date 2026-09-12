@@ -73,3 +73,36 @@ else:
     3. 📈 **Get** SQL + charts + AI insights automatically
     4. ⬇️ **Export** results as CSV or Excel
     """)
+
+st.markdown("---")
+st.subheader("⚙️ Settings")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    if st.button("🗑️ Clear Query History", type="secondary"):
+        try:
+            with engine.connect() as conn:
+                conn.execute(text("DELETE FROM query_history"))
+                conn.commit()
+            st.success("✅ Query history cleared!")
+            st.rerun()
+        except Exception as e:
+            st.error(f"Error: {e}")
+
+with col2:
+    if st.button("⚠️ Delete All Datasets", type="secondary"):
+        confirm = st.checkbox("I understand this will delete all my data")
+        if confirm:
+            try:
+                # Drop all tables except query_history
+                all_tables = get_all_tables()
+                with engine.connect() as conn:
+                    for t in all_tables:
+                        conn.execute(text(f'DROP TABLE IF EXISTS "{t}"'))
+                    conn.commit()
+                st.success("✅ All datasets deleted!")
+                st.rerun()
+            except Exception as e:
+                st.error(f"Error: {e}")
+

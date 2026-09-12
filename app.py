@@ -18,8 +18,8 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📊 AI Business Intelligence Copilot")
-st.caption("Powered by Groq · LLaMA 3.1 · SQLite · Plotly — 100% Free")
+st.title("📊  Business AI Analyst ")
+st.caption("Upload any business dataset → Ask questions in plain English → Get SQL + Charts + Insights automatically")
 st.markdown("---")
 
 # ── KPI Cards ─────────────────────────────────────────────────
@@ -49,7 +49,7 @@ if tables:
         except:
             pass
     c3.metric("🗃️ Total Records", f"{total_rows:,}")
-    c4.metric("🤖 AI Model", "LLaMA 3.1")
+    c4.metric("🤖 AI Model", "Qwen 27B")
 
     st.markdown("---")
 

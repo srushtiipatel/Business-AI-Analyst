@@ -91,11 +91,10 @@ with col1:
             st.error(f"Error: {e}")
 
 with col2:
+    confirm = st.checkbox("I understand this will delete all my data")
     if st.button("⚠️ Delete All Datasets", type="secondary"):
-        confirm = st.checkbox("I understand this will delete all my data")
         if confirm:
             try:
-                # Drop all tables except query_history
                 all_tables = get_all_tables()
                 with engine.connect() as conn:
                     for t in all_tables:
@@ -105,4 +104,6 @@ with col2:
                 st.rerun()
             except Exception as e:
                 st.error(f"Error: {e}")
+        else:
+            st.warning("⚠️ Please check the box first to confirm!")
 

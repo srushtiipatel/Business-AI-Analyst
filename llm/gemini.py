@@ -1,11 +1,17 @@
 from groq import Groq
+import streamlit as st
 import os
-from dotenv import load_dotenv
 
-load_dotenv()
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except:
+    pass
 
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
-MODEL = "qwen/qwen3.8-27b"  # Free, fast, excellent SQL generation
+# Works locally (.env) and on Streamlit Cloud (secrets)
+api_key = os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", "")
+client = Groq(api_key=api_key)
+MODEL = "qwen/qwen3.8-27b"
 
 def _ask(prompt: str) -> str:
     response = client.chat.completions.create(

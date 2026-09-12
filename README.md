@@ -84,10 +84,8 @@ No SQL knowledge needed. No coding required. Just ask and get answers.
 
 ## 📂 Project Structure
 
-Business AI Analyst/
-│
-├── .vscode/
-│   └── settings.json
+```
+Business-AI-Analyst/
 │
 ├── database/
 │   └── db.py
@@ -105,3 +103,4 @@ Business AI Analyst/
 ├── bi_copilot.db
 ├── README.md
 └── requirements.txt
+```

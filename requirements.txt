@@ -1,10 +1,9 @@
 streamlit
 sqlalchemy
-psycopg2-binary
 pandas
 openpyxl
 plotly
-google-generativeai
+groq
 python-dotenv
 fpdf2
 xlsxwriter
